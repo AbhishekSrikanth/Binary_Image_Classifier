@@ -7,23 +7,29 @@ import cv2
 import tensorflow as tf
 import numpy as np
 
+#Initialize with ImageNet weights
+vgg16_model = keras.applications.vgg16.VGG16(weights='imagenet')
 
-vgg16_model = keras.applications.vgg16.VGG16(weights='Z:/vgg16_weights_tf_dim_ordering_tf_kernels.h5')
-
+#Create new sequential model
 model = Sequential()
 
 for layer in vgg16_model.layers[:-1]:
     
+    #Add layers from VGG16
     model.add(layer)
     
 for layer in model.layers:
     
+    #Freeze added layers which are already trained
     layer.trainable = False
 
+#Add new dense layer for prediction
 model.add(Dense(1,activation='sigmoid'))
 
-model.load_weights('Z:/Smoke_Classifier_weights/Vgg16_trial_2e.h5')
+#Load model weights from diretory 
+model.load_weights('')
 
+#Compile the model with loaded weights
 model.compile(optimizer=keras.optimizers.SGD(lr=1e-4, momentum=0.9), loss='binary_crossentropy', metrics=['accuracy'])
 
 
@@ -32,12 +38,14 @@ cam = cv2.VideoCapture(0)
 cv2.namedWindow("test")
 
 while True:
+
     ret, frame = cam.read()
 
     im = cv2.resize(frame, (224, 224))
     im = np.expand_dims(im, axis=0)
     prediction = model.predict(im)
 
+    #If model is confident predict smoke
     if prediction[0][0] <= 0.5:
         label = 'NoSmoke'
     else:
