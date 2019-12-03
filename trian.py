@@ -88,7 +88,7 @@ metrics = ['accuracy']
 
 classifier.compile(optimizer = optimizer, loss = loss, metrics = metrics)
 
-classifier.save_model(model_dir + 'classifier_model.h5')
+classifier.save(model_dir + 'classifier_model.h5')
 
 
 
@@ -110,4 +110,4 @@ classifier.fit_generator(
 
 
 
-classifier.save_model(model_dir + 'classifier_model.h5')
+classifier.save(model_dir + 'classifier_model.h5')
