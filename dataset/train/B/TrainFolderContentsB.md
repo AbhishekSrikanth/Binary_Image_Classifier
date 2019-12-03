@@ -1,0 +1,1 @@
+# This folder should contain the training images of Class B.
