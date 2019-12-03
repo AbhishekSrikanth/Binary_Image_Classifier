@@ -1,1 +1,1 @@
-# This folder should contain the testing images (contains both images from both Class A and Class B).
+# This folder should contain the testing images (contains images from both Class A and Class B).
