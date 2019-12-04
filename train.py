@@ -1,7 +1,4 @@
-from keras.models import Sequential
-from keras import optimizers
-from keras import losses
-from keras.layers import Convolution2D, MaxPooling2D, Dense, Flatten, ZeroPadding2D, Activation
+from keras.models
 from keras.preprocessing.image import ImageDataGenerator
 import h5py
 
@@ -16,7 +13,7 @@ test_data_dir = "/dataset/test/"
 #Model directory
 model_dir = "/model/"
 
-
+classifier = models.load_model(model_dir + 'model.h5')
 
 #Size of the image 
 img_height,img_weight =  224,224
@@ -60,35 +57,6 @@ test_data = DataGen.flow_from_directory(
 	batch_size = test_batch_size,
 	class_mode = None.
 	shuffle = False)
-
-
-
-def model:
-
-	#Define your classifer here
-	classifer = Sequential()
-
-	return classifier
-
-
-
-#Get the defined model
-classifier = model()
-
-#Model optimizer
-optimizer = optimizers.Adam(learning_rate=0.001)
-
-#Model loss
-loss = 'binary_crossentropy'
-
-#Model metrics
-metrics = ['accuracy']
-
-
-
-classifier.compile(optimizer = optimizer, loss = loss, metrics = metrics)
-
-classifier.save(model_dir + 'classifier_model.h5')
 
 
 
