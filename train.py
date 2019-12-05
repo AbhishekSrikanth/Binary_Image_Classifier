@@ -1,31 +1,31 @@
 from keras.models
 from keras.preprocessing.image import ImageDataGenerator
 import h5py
-
+import configs as configs
 
 
 #Training data directory
-train_data_dir = "/dataset/train/"
+train_data_dir = configs.train_data_dir
 
 #Test data directory
-test_data_dir = "/dataset/test/"
+test_data_dir = configs.test_data_dir
 
 #Model directory
-model_dir = "/model/"
+model_dir = configs.model_dir
 
 classifier = models.load_model(model_dir + 'model.h5')
 
 #Size of the image 
-img_height,img_weight =  224,224
+img_height,img_weight =  configs.img_height,configs.img_weight
 
 #Training batch size
-train_batch_size = 16
+train_batch_size = configs.train_batch_size
 
 #Test batch size
-test_batch_size = 16
+test_batch_size = configs.test_batch_size
 
 #Validation Split
-validation_split = 0.20
+validation_split = configs.validation_split
 
 
 
@@ -64,7 +64,7 @@ steps_per_epoch = len(train_data)/train_batch_size
 
 valid_steps = len(valid_steps)/train_batch_size
 
-epochs = 500
+epochs = configs.epochs
 
 
 
