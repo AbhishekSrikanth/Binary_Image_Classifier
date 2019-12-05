@@ -27,3 +27,7 @@ validation_split = 0.20
 
 #Number of epochs
 epochs = 500
+
+Label1 = 'ClassA'
+
+Label2 = 'ClassB'

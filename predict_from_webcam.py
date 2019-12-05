@@ -3,6 +3,7 @@ import os
 import cv2
 import numpy as np
 from predictwithmodel import PredictWithModel
+import configs as configs
 
 cam = cv2.VideoCapture(0)
 
@@ -24,10 +25,10 @@ while True:
 
     #If model is confident predict smoke
     #Frames with Non Smoke label would be predominant  
-    if prediction[0][0] <= confidence_Threshold:
-        label = 'No Smoke'
+    if prediction[0][0] <= 0.5:
+        label = configs.Label1
     else:
-        label = 'Smoke'
+        label = configs.Label2
 
     #Text Label attributes
     font                   = cv2.FONT_HERSHEY_SIMPLEX
