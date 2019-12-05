@@ -59,7 +59,7 @@ test_data = DataGen.flow_from_directory(
 	shuffle = False)
 
 
-
+#Number Steps * Batch Size = Total dataset size
 steps_per_epoch = len(train_data)/train_batch_size
 
 valid_steps = len(valid_steps)/train_batch_size
