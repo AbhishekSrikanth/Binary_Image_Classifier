@@ -78,4 +78,4 @@ classifier.fit_generator(
 
 
 
-classifier.save(model_dir + 'classifier_model.h5')
+classifier.save(model_dir + 'model.h5')
