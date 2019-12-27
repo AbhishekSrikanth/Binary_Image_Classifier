@@ -1,5 +1,6 @@
-from keras import models
-from keras.preprocessing.image import ImageDataGenerator
+import tensorflow as tf
+from tf.keras import models
+from tf.keras.preprocessing.image import ImageDataGenerator
 import h5py
 import configs as configs
 

@@ -1,8 +1,9 @@
-import Keras.layers
-import Keras.models
-import Keras.optimizers
-import Keras.losses
-from Keras.models import Sequential
+import tensorflow as tf
+import tf.keras.layers
+import tf.keras.models
+import tf.keras.optimizers
+import tf.keras.losses
+from tf.keras.models import Sequential
 import configs as configs
 
 class Model:
