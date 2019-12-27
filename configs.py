@@ -1,31 +1,31 @@
-#model directory
+# model directory
 model_dir = '/model/'
 
-#Image size in pixels
-img_height,img_weight =  224,224
+# Image size in pixels
+img_height, img_weight = 224, 224
 
-#Model loss
+# Model loss
 model_loss = 'binary_crossentropy'
 
-#Model metrics
+# Model metrics
 model_metrics = ['accuracy']
 
-#Training data directory
+# Training data directory
 train_data_dir = "/dataset/train/"
 
-#Test data directory
+# Test data directory
 test_data_dir = "/dataset/test/"
 
-#Training batch size
+# Training batch size
 train_batch_size = 16
 
-#Test batch size
+# Test batch size
 test_batch_size = 16
 
-#Validation Split
+# Validation Split
 validation_split = 0.20
 
-#Number of epochs
+# Number of epochs
 epochs = 500
 
 Label1 = 'ClassA'

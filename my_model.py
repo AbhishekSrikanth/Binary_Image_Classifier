@@ -2,6 +2,7 @@ import Keras.layers
 import Keras.models
 import Keras.optimizers
 import Keras.losses
+from Keras.models import Sequential
 import configs as configs
 
 class Model:
