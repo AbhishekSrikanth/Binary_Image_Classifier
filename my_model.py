@@ -26,7 +26,7 @@ class Model:
 
 		self.model = Sequential()
 
-		self.__CreateModel()
+		self.model = self.__CreateModel()
 		self.__CompileModel()
 		self.__SaveModel(self.model_dir)
 	
@@ -37,6 +37,8 @@ class Model:
 	def __CreateModel(self):
 
 		#Define your model here
+
+		return model
 
 	def __SaveModel(self,model_dir):
 
