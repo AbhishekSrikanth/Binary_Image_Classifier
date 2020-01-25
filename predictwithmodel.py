@@ -1,5 +1,4 @@
-import tensorflow as tf
-from tf.keras import models
+from tensroflow.keras import models
 import configs as configs
 
 

@@ -1,7 +1,5 @@
-import tensorflow as tf
-from tf.keras import models
-from tf.keras.preprocessing.image import ImageDataGenerator
-import h5py
+from tensorflow.keras import models
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import configs as configs
 
 # Training data directory
@@ -28,7 +26,8 @@ test_batch_size = configs.test_batch_size
 validation_split = configs.validation_split
 
 # Creating a new image data generator
-DataGen = ImageDataGenerator(rescale=1. / 255, validation_split=validation_split)
+DataGen = ImageDataGenerator(
+    rescale=1. / 255, validation_split=validation_split)
 TestDataGen = ImageDataGenerator(rescale=1. / 255)
 
 # Training data from directory
